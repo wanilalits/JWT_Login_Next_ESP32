@@ -10,16 +10,16 @@ export function middleware(request) {
 
 
 
+ console.log('ispublicPath' )
 
 
  if (ispublicPath && token)
 { 
-  console.log('1 is'+ ispublicPath+ token )
 return NextResponse.redirect(new URL(path, request.nextUrl));
 }
 
 if (!ispublicPath && !token  )
-    { console.log('2 is'+ ispublicPath+ token )
+    { 
     return NextResponse.redirect(new URL('/login', request.nextUrl));
     }
 
