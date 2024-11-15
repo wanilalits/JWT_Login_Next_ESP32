@@ -5,7 +5,7 @@ import Chat from './components/Chat';
 export default function Home() {
   return (
     <div>
-    <h2>V1.0</h2>
+    <h2>V1.1</h2>
     
     
       
