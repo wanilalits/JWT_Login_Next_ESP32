@@ -6,10 +6,6 @@ export default function Home() {
   return (
     <div>
     <h2>V1.1</h2>
-    
-    
-      
-  
     </div>
   );
 }
