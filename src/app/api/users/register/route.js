@@ -4,7 +4,6 @@ import { Log } from "@/database/userSchema";
 import { NextResponse } from "next/server";
 import bcryprjs from 'bcryptjs'
 
-
 const connectionStr = "mongodb+srv://lalilswani:KrGXqcaDbahGMmaL@cluster0.ygf21f6.mongodb.net/loginDatabase?retryWrites=true&w=majority&appName=Cluster0";
 
 export const GET = async () => {
@@ -18,17 +17,17 @@ export const POST = async (reqest) => {
     let payload = await reqest.json();
 
     if (!payload.name  || !payload.username || !payload.password ) {
-        return NextResponse.json(({ warning: "enter aa data "}), { status: 202 })
+        return NextResponse.json(({ warning: "enter all data "}), { status: 202 })
     }
     await mongoose.connect(connectionStr)
+      let log = await Log.findOne({username:payload.username}) ; //check same user is already exit?
     
-      let log = await Log.findOne({username:payload.username}) ;
-       //await Log.deleteMany()
-if (log)
-{
-    return NextResponse.json(({ sucess: true }), { status: 202 })}
-
+      if (log){
+    return NextResponse.json(({ sucess: true, result:'user exit' }), { status: 202 })}
+   
+   
     const salt =await bcryprjs.genSalt(12)
+    console.log(salt)
     const HashPassword =await bcryprjs.hash(payload.password, salt);
     payload.password=HashPassword;
 

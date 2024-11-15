@@ -1,13 +1,23 @@
 import Login from "./login/page";
-
+import Head from 'next/head';
+import Chat from './components/Chat';
 
 export default function Home() {
-
-
   return (
-    <>
-<h2>V1.0</h2>
-
-    </>
+    <div>
+    <h2>V1.0</h2>
+    
+    
+      
+  
+    </div>
   );
 }
+
+
+
+
+
+
+
+

@@ -10,13 +10,19 @@ export function middleware(request) {
 
 
 
- console.log('ispublicPath' )
+ console.log(ispublicPath+'--'+config.matcher[0]+'--'+token )
 
 
- if (ispublicPath && token)
+ if (ispublicPath && token && !config.matcher[0] )
 { 
 return NextResponse.redirect(new URL(path, request.nextUrl));
 }
+
+if (ispublicPath && token && config.matcher[0] )
+  { 
+  return NextResponse.redirect(new URL('/', request.nextUrl));
+  }
+
 
 if (!ispublicPath && !token  )
     { 
