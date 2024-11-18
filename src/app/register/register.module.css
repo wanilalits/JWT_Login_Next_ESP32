@@ -1,5 +1,94 @@
-.errorBox{
+.box {
+    position: relative;
+    border: 3px;
+
+    border: 1px solid rgb(89, 107, 10);
+    background-color: rgb(212, 238, 218);
+    border-radius: 12px;
+    width: 300px;
+    padding: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    left: 50%;
+margin-top: 70px;
+    transform: translateX(-50%);
+}
+
+.title{
+    font-size: 140%;
+    text-align: center;
+}
+
+.textBox {
+    display: block;
+    box-sizing: border-box;
+    width: 200px;
+    height: 30px;
+    font-size: 110%;
+    margin-top: 1px;
+    margin-bottom: 12px;
+    border: 0.5px solid rgb(12, 0, 0);
+    border-radius: 5px;
+    padding-left: 3px;
+   
+}
+
+.label{
+    margin:0px;
+font-weight: 549;
+}
+
+
+.errorBox {
     margin-top: 5px;
     color: red;
     font-size: 85%;
+}
+
+
+
+.textBox::placeholder {
+
+    opacity: 0.4;
+    font-size: 80%;
+}
+
+.checkbox {
+    display: inline-block;
+  
+}
+.label2{
+  
+    font-size: 82%;
+   
+}
+
+.button{
+    position :absolute;
+    left:50%;
+ transform: translate(-50%, 0px);
+height: 30px;
+border-radius: 10px;
+background-color: azure;
+
+}
+
+.button:hover{
+font-size: 14px;
+}
+
+.button:active {
+    background-color: rgb(204, 238, 201);
+    height: 32px;
+    transform: translate(-50%,-1px);
+}
+
+.link{
+    font-size: 102%;
+    color: blue;
+    animation: blinker 3s steps(2, start) infinite;
+}
+
+@keyframes blinker {
+    to { color: red; }
 }

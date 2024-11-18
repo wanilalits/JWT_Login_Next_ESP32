@@ -34,14 +34,8 @@ export const POST = async (reqest) => {
    { console.log('ok1')
     console.log(jwt.decode(token))
    }
-//
-    
-
     const arrayToken = token.split('.');
     const tokenPayload = JSON.parse(atob(arrayToken[1]));
-
-
-
 
     const response = NextResponse.json({ data: [payload.username, log.name], status: 202 })
 

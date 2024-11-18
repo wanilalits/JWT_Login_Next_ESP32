@@ -13,12 +13,17 @@ function Register(props) {
     const router = useRouter();
 
     const onchangevalue = (e) => {
+        console.log(data)
         setData({ ...data, [e.target.name]: e.target.value })
-
+     
+    }
+    const onchangevalue1 = (e) => {
+        setData({...data, [e.target.name]: e.target.checked })
+        
     }
 
     const onregister = async (e) => {
-        if ((!data.name && (error = 'name')) || (!data.username && (error = 'user ID')) || (!data.password && (error = 'password'))) {
+        if ((!data.name && (error = 'name')) || (!data.username && (error = 'user ID')) || (!data.password && (error = 'password'))  || (!data.Repassword && (error = 'Retype Passwors')) || ((data.Repassword != data.password)&& (error = 'same password')) || (!data.checkbox && (error = 'terms & conditions'))) {
             setMssage('Please fill ' + error)
             return;
         }
@@ -31,7 +36,7 @@ function Register(props) {
                     body: JSON.stringify(data)
                 });
                 response = await response.json();
-                console.log(response.result)
+                console.log(response.sucess)
                 if (response.result == 'user exit') {
                     setMssage('user already exists')
                 }
@@ -50,16 +55,25 @@ function Register(props) {
     }
     return (
         <>
-            <div className={login.box}>
-                <label className={login.title}>Register</label>
-                <label className={login.label3}>Name</label>
-                <input className={login.textBox} id='1' type="text" autoComplete="off" name="name" placeholder="name" onChange={(e) => onchangevalue(e)} ></input>
-                <label className={login.label3}>User Id</label>
-                <input className={login.textBox} id='3' type="text" autoComplete="off" name="username" placeholder="ID" onChange={(e) => onchangevalue(e)}></input>
-                <label className={login.label3}>Password</label>
-                <input className={login.textBox} id='2' type="password" autoComplete='off' name="password" placeholder="Password" onChange={(e) => onchangevalue(e)}></input>
-                <button className={login.button} onClick={(e) => (onregister(e))}>&nbsp; Register &nbsp;</button> <br></br>
-                <label className={login.lebel2}>Already have an account?</label> <Link className={login.link} href="/login"> Login</Link>
+            <div className={register.box}>
+               <div className={register.title}><label >Register</label></div> 
+                <br></br>
+                <label className={register.label}>Name</label>
+                <input className={register.textBox} id='1' type="text" autoComplete="off" name="name" placeholder="name" onChange={(e) => onchangevalue(e)} ></input>
+                <label className={register.label}>User Id</label>
+                <input className={register.textBox} id='3' type="text" autoComplete="off" name="username" placeholder="ID" onChange={(e) => onchangevalue(e)}></input>
+                <label className={register.label}>Password</label>
+                <input className={register.textBox} id='2' type="password" autoComplete='off' name="password" placeholder="Password" onChange={(e) => onchangevalue(e)}></input>
+                <label className={register.label}>Retype Password</label>
+                <input className={register.textBox} id='4' type="password" autoComplete='off' name="Repassword" placeholder="Retype Password" onChange={(e) => onchangevalue(e)}></input>
+                
+                <input className={register.checkbox} id='5' type="checkbox" name="checkbox" onChange={(e) => onchangevalue1(e)}></input> 
+                <label className={register.label2}>  I agree to terms and conditions</label>
+                <br></br>
+                <br></br>
+                <button className={register.button} onClick={(e) => (onregister(e))}>&nbsp; Register &nbsp;</button> <br></br>
+                <br></br>
+                <label className={register.label2}>Already have an account?</label> <Link className={register.link} href="/login"> Login</Link>
                 <br></br>
                 <label className={register.errorBox}>{message}</label>
             </div>

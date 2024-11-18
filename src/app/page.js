@@ -1,5 +1,5 @@
 import Login from "./login/page";
-import Head from 'next/head';
+//import Head from 'next/head';
 import Chat from './components/Chat';
 
 export default function Home() {
