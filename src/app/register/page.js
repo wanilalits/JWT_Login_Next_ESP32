@@ -83,7 +83,7 @@ function Register(props) {
                 <label className={register.errorBox}>{message}</label>
             </div>
 <br></br>
-            <div className={register.info}>NextJs -- middleware -- app/api -- Validation -- Reactjs -- React Ref -- CSS -- Mongodb -- Click events -- Vercel</div>
+            <div className={register.info}>NextJs -- middleware -- app/api -- JWT-- bcryprjs -- Validation -- Reactjs -- React Ref -- CSS -- Mongodb -- Click events -- Vercel</div>
         </>
     );
 }
