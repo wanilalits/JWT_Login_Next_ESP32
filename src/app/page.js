@@ -10,7 +10,7 @@ export default function Home() {
 
    <Link  href="/register"> Register Link </Link>
    <br></br>
- <Link  href="/login"> <a>Login Link</a></Link>
+ <Link  href="/login"> Login Link </Link>
 
     </div>
   );
