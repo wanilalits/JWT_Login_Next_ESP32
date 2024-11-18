@@ -1,4 +1,4 @@
-import Login from "./login/page";
+
 //import Head from 'next/head';
 import Link from "next/link";
 
@@ -7,9 +7,10 @@ export default function Home() {
     <div>
     <h2>V1.1</h2>
 <br></br>
-    <Link  href="/register"> Register Link</Link>
 
-    <Link  href="/login"> Login Link</Link>
+   <Link  href="/register"> Register Link </Link>
+   <br></br>
+ <Link  href="/login"> <a>Login Link</a></Link>
 
     </div>
   );
