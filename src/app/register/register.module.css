@@ -56,8 +56,13 @@ font-weight: 549;
 
 .checkbox {
     display: inline-block;
-  
+    
 }
+
+.checkbox:focus-within {
+    outline :1px solid red;
+  }
+
 .label2{
   
     font-size: 82%;
@@ -93,4 +98,8 @@ font-size: 14px;
 
 @keyframes blinker {
     to { color: red; }
+}
+
+.info{
+    text-align: center;
 }
