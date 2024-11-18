@@ -68,12 +68,12 @@ function Register(props) {
                 <input className={register.textBox} id='4' type="password" autoComplete='off' name="Repassword" placeholder="Retype Password" onChange={(e) => onchangevalue(e)}></input>
                 
                 <input className={register.checkbox} id='5' type="checkbox" name="checkbox" onChange={(e) => onchangevalue1(e)}></input> 
-                <label className={register.label2}>  I agree to terms and conditions</label>
+                <label className={register.label2}> &nbsp;  I agree to terms and conditions</label>
                 <br></br>
                 <br></br>
                 <button className={register.button} onClick={(e) => (onregister(e))}>&nbsp; Register &nbsp;</button> <br></br>
                 <br></br>
-                <label className={register.label2}>Already have an account?</label> <Link className={register.link} href="/login"> Login</Link>
+                <label className={register.label2}>Already have an account?  <span></span><Link className={register.link} href="/login"> Login</Link> </label>
                 <br></br>
                 <label className={register.errorBox}>{message}</label>
             </div>
