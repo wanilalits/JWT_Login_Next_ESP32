@@ -1,88 +1,46 @@
-'use client'
-import React, { useState, useEffect } from 'react';
+"use client"
+
+import { useState,useEffect } from "react";
+
+import Dashboard from "./Dashboard.module.css"
+import profile from '@/app/profile1/profile.module.css';
 import { useRouter } from 'next/navigation';
-import profile from '@/app/profile/profile.module.css';
+function page(props) {
+  const router = useRouter();
+
+  const oneLogout = async (e) => {
+    let response = await fetch(window.location.origin+'/api/users/profile');
+
+   if (response.status === 200) {
+    router.push('./login')
+    response = await response.json()
+}
+
+}
 
 
-function Profile() {
-    const router = useRouter();
-    const [data1, setData1] = useState('')
-    const [data, setData] = useState('')
-    const [apidata, setApiata] = useState({"username":"", "password":"", "_id": "67221e1df5585e4d8c379add", "sensor": "not connected", "sw": "","btn": "","msg": ""})
-      
-    useEffect(() => {
-        console.log('Component mounted');
-        let value = localStorage.getItem("value");
-        value = JSON.parse(value)
-     
-        setData1(value.data[1])//
-        return () => {
-            console.log('Component unmounted');
-        };
-    }, []);
 
 
-    useEffect(() => {
-        
+
+    const [data, setData]= useState(30);
+    var hei=30
+      useEffect(() => {
+        //Implementing the setInterval method
         const interval = setInterval(() => {
-          getData()
-        }, 7000);
+          countClickHandler()
+        }, 2000);
         //Clearing the interval0
         return () => clearInterval(interval);
     }, [data]);
+    
+    
+     const countClickHandler = () => {setData (Number((Math.random() * (28.00 -30.00) + 28.00).toFixed(2))); 
+     
+      hei=data
+    console.log(hei)
+    };
 
 
-    const getData =async()=>{
-        try{
-            let response = await fetch(window.location.origin+'/api/esp',{
-            method : 'POST',
-       body: JSON.stringify({"_id": "67221e1df5585e4d8c379add", "btn":apidata.btn, 'msg': apidata.msg})
-       //body: JSON.stringify(apidata)
-
-            });
-          
-            if (response.status===200){
-                response = await response.json()
-              
-             
-             setData ({"_id": "67221e1df5585e4d8c379add"})
-             setApiata(response.position)
-            
-            }
-            
-           
-       
-        }
-        catch(error)
-        {
-        
-        }
-      
- 
-        
-    }
-
-    const oneLogout = async (e) => {
-        let response = await fetch(window.location.origin+'/api/users/profile');
-
-       if (response.status === 200) {
-        router.push('./login')
-        response = await response.json()
-    }
-
-}
-
-
-const oninput = (e)=>
-{ 
-    apidata.btn=e
- 
-   
-}
-const ontext = (e)=>{
-
-    apidata.msg= e.target.value
-}
 
 
 
@@ -90,34 +48,149 @@ const ontext = (e)=>{
     return (
         <>
 
-
-            <div className={profile.profile}  >
+<div className={profile.profile}  >
              
-                <div className={profile.profile1} onClick={(e) => (oneLogout(e))}  >  </div>
-                <div className={profile.profileName} >Welcome {data1} </div>
-            </div>
-<div>
-            <h3>in The Profile Page</h3>
-            
-            <button onClick={(e) => (oneLogout(e))}>&nbsp; LogOut &nbsp;</button>  &nbsp;
-<br></br> <br></br>
-            <div className={profile.dashboardBox}>
-            <div className={profile.dashboardBox1}>
-            <label className={profile.dashboardlabel1}>{apidata.sensor}</label>
-            <label className={profile.dashboardlabel2} style={{backgroundColor: apidata.sw}}></label>
-            </div>
-            <div className={profile.dashboardBox2}>
-            <input className={profile.dashboardInput} onChange={(e) => (ontext(e))} type="text" autoComplete='off' name="password" placeholder="Password" ></input>
-            <button className={profile.dashboardbtn1} onClick={(e) => (oninput('on'))} >ON</button>
-            <button className={profile.dashboardbtn2} onClick={(e) => (oninput('off'))}>OFF</button>
-          </div>
+             <div className={profile.profile1} onClick={(e) => (oneLogout(e))}  >  </div>
           
+         </div>
+         <button onClick={(e) => (oneLogout(e))}>&nbsp; LogOut &nbsp;</button>  &nbsp;
+         <br></br> <br></br>
 
-            </div>
-            </div>
+
+  <div className={Dashboard.mainbox}>
+
+    <div className={Dashboard.box}>
+         
+  
+<div className={Dashboard.box1}>
+<div className={Dashboard.ThermameterOBody}>
+<div className={Dashboard.ThermameterTube}> <div className={Dashboard.ThermameterITube} style={{transform: 'translate(-50%,'+(250-(data*5) )+'px) ',height: data*5+'px', transition: 'transform 1s, height  1s' } }   ></div></div>
+<div className={Dashboard.ThermameterBulb}></div>
+<div className={Dashboard.ThermameterIBulb}></div>
+<div className={Dashboard.ThermamerRuler}> 
+ <>
+<hr className={Dashboard.hr2}/>
+
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/> 
+
+<hr className={Dashboard.hr2}/>
+
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/> 
+
+<hr className={Dashboard.hr2}/>
+
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/> 
+
+<hr className={Dashboard.hr2}/>
+
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/> 
+
+<hr className={Dashboard.hr2}/>
+
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/> 
+<hr className={Dashboard.hr1}/>
+<hr className={Dashboard.hr1}/>
+
+<hr className={Dashboard.hr2}/>
+</>
+</div>
+<div className={Dashboard.ThermamerRulerText}>
+ <p >50</p> 
+ <p >40</p>
+ <p >30</p>
+ <p >20</p>
+ <p >10</p>
+ <p >00</p>
+ </div>
+ <div className={Dashboard.ThermameterInfo}>Temprature <br></br> {data}°C <br></br> {((data*9/5)+32).toFixed(2)}°F</div>
+</div>
+
+
+
+</div>
+<div>
+<div className={Dashboard.box2}></div>
+<div className={Dashboard.box2}>Sensor 1</div>
+</div> 
+ 
+  
+  <div className={Dashboard.Controlbox}>Controlbox</div>
+  <div>
+<div className={Dashboard.box3}>
+<div className={Dashboard.CompassBody}  style={{transform: 'rotate('+(data-28)*180+'deg)', transition: 'transform 1s' } }>
+<div className={Dashboard.CompassN}>N</div>
+<div className={Dashboard.CompassS}>S</div>
+<div className={Dashboard.CompassE}>E</div>
+<div className={Dashboard.CompassW}>W</div>
+
+
+</div>
+<div className={Dashboard.CompassBody1}></div>
+<div className={Dashboard.CompassDot}></div>
+<div className={Dashboard.CompassNeedle}  >
+<div className={Dashboard.CompassNeedleN}></div>
+<div className={Dashboard.CompassNeedleS}></div>
+</div>
+
+
+</div>
+<div className={Dashboard.box3}>
+
+
+
+  
+</div>
+</div>
+
+          </div> 
+          </div> 
+
+
+          <div className={Dashboard.TThermamerRulerText}> ....................</div>
+
+       
         </>
     );
 }
-export default Profile;
 
-//style={{transform: 'translate(-50%,'+(250-(data*5) )+'px) ',height: data*5+'px', transition: 'transform 1s, height  1s' } }  
+export default page;
+
+//

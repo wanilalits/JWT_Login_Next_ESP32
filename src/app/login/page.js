@@ -20,7 +20,7 @@ function Login (props) {
     const  onLogin = async (e) => {
      let message ="";
         if ( (!data.username && (message = 'User Id') )  ||( !data.password && (message = 'password')) ){ 
-            setDisplaymssage('Please Enter '+message)  
+            setDisplaymssage('Please enter '+message)  
             return;
         }
 
@@ -69,6 +69,14 @@ function Login (props) {
                <label className={login.lebel2}>Don't have an account?</label> <Link className={login.link} href="/register"> Sign Up</Link>
            <br></br>
            <div className={login.errorBox}>   {displaymessage}</div>
+            </div>
+            <br></br>
+            <br></br>
+           <div  className={login.info} >
+           User Id : user
+            <br></br>
+            Password: user
+
             </div>
         </>
     );

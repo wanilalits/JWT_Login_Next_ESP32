@@ -1,0 +1,247 @@
+
+
+.mainbox {
+  width: 100%;
+  padding: 5px;
+}
+
+.box {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(226, 250, 253);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+ 
+}
+
+.box1 {
+border: 1px solid rgb(100, 34, 185);
+background-color: rgb(104, 206, 219);
+height: 300px;
+width: 200px;
+border-radius: 2%;
+margin-top: 25px;
+margin-left: 20px;
+}
+
+.box2 {
+  border: 1px solid rgb(100, 34, 185);
+  background-color: rgb(165, 219, 104);
+  height: 150px;
+  width: 150px;
+  border-radius: 2%;
+ margin-top: 16px;
+  margin-left: 20px;
+}
+
+.box3 {
+  border: 1px solid rgb(100, 34, 185);
+  background-color: rgb(72, 223, 165);
+  height: 160px;
+  width: 160px;
+  border-radius: 2%;
+ margin-top: 10px;
+  margin-left: 20px;
+  position: relative;
+}
+
+.Controlbox
+{
+  background-color: aqua;
+  height: 340px;
+  width: 340px;
+  margin-left: 20px;
+  transform: translateY(5px);
+}
+
+.ThermameterOBody
+{position: relative;
+height: 95%;
+width: 90%;
+background-color: aliceblue;
+left: 5%;
+top: 2.5%;
+border-radius: 10px;
+}
+
+.ThermameterTube{
+ height: 280px;
+width: 18px;
+background-color: rgb(201, 210, 218);
+border: 1px solid rgb(0, 0, 0);
+transform: translate(40px, 5px);
+border-radius: 17px;
+}
+
+.ThermameterBulb{
+height: 40px;
+width: 40px;
+border: 1px solid rgb(0, 0, 0);
+background-color: rgb(201, 210, 218);
+border-radius: 20px;
+transform: translate(29px, -30px);
+position: relative;
+z-index: -1;
+}
+
+.ThermameterITube{
+  width: 10px;
+  margin-left: 50%;
+  background-color: rgb(175, 9, 9);
+  border-radius: 10px;
+  height: 250px;
+  transform: translate(-50%,0px);
+}
+
+.ThermameterIBulb
+{
+  height: 30px;
+  width: 30px;
+  background-color: rgb(175, 9, 9);
+  border-radius: 15px;
+  transform: translate(112%, -65px);
+}
+
+.ThermamerRuler{
+  height: 250px;
+  width: 15px;
+  transform: translate(20px,-345px);
+}
+
+.ThermamerRulerText{
+transform: translate(6px,-620px);
+line-height: 50px;
+color: rgb(0, 9, 129);
+font-size: 10px;
+}
+
+
+.hr1{
+  border: none;
+  border-top: 1px solid red;
+  margin-bottom: 4px;
+ width: 40%;
+ transform: translateX(90%);
+}
+
+.hr2{
+  box-sizing: border-box;
+  border: none;
+  border-top: 1px solid rgb(97, 19, 199);
+  margin-bottom: 4px;
+}
+
+.ThermameterInfo
+{
+  position: absolute;
+  border: 1px solid rgb(97, 19, 199);
+ top :20%;
+ left: 40%;
+ line-height: 130%;
+font-weight: 600;
+text-align: center;
+}
+
+.CompassBody
+{
+  position: absolute;
+  background-color: rgb(60, 207, 2);
+  height: 90%;
+  width: 90%;
+  border-radius: 50%;
+  top: 5%;
+  left: 5%;
+}
+
+.CompassBody1
+{
+  position: absolute;
+  background-color: rgb(91, 2, 207);
+  height: 70%;
+  width: 70%;
+  border-radius: 50%;
+  top: 15%;
+  left: 15%;
+}
+
+.CompassDot
+{
+  position: absolute;
+  background-color: rgb(145, 125, 170);
+  height: 10%;
+  width: 10%;
+  border-radius: 50%;
+  top: 45%;
+  left: 45%;
+  z-index: 5;
+}
+
+.CompassNeedle
+{box-sizing: border-box;
+  position: absolute;
+  height: 70%;
+  width: 8%;
+  top: 15%;
+  left: 46%;
+  
+
+}
+
+.CompassNeedleN
+{box-sizing: border-box;
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  border-bottom: 55px solid rgb(253, 41, 69);
+  border-left: 6.5px solid transparent;
+  border-right: 6.5px solid transparent;
+  
+}
+
+.CompassNeedleS
+{box-sizing: border-box;
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  bottom: 0%;
+  border-top: 55px solid rgb(0, 0, 0);
+  border-left: 6.5px solid transparent;
+  border-right: 6.5px solid transparent;
+}
+
+.CompassN
+{box-sizing: border-box;
+  position: absolute;
+  top: 0%;
+ left: 50%;
+ font-size: 100%;
+ transform: translateX(-50%);
+}
+
+.CompassS
+{
+  position: absolute;
+  top: 100%;
+ left: 50%;
+ transform: translate(-50%, -80%);
+}
+
+.CompassE
+{
+  position: absolute;
+  top: 50%; 
+  right: 0%;
+  transform: translate(0% ,-50%);
+
+}
+
+.CompassW
+{
+  position: absolute;
+  top: 50%; 
+  left: 0%;
+  transform: translate(0% ,-50%);
+
+}
