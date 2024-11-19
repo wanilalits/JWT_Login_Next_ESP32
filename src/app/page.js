@@ -12,13 +12,13 @@ const url=window.location.href
 
    <Link  href="/register"> Register Link  </Link>
    <br></br>   
-   or Goto
+   or goto
    <br></br>
    {url+'register'}
    <br></br><br></br>   <br></br>
  <Link  href="/login"> Login Link  </Link> 
  <br></br> 
-   or Goto
+   or goto
    <br></br>
    {url+'login'}
    <br></br>
