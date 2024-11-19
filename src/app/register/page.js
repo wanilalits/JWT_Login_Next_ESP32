@@ -27,7 +27,7 @@ function Register(props) {
 
     const onregister = async (e) => {
         inputRef5.current.style.outline = 'none'
-        if ( (!data.name && (error = 'name') + (inputRef1.current.focus()) ) || (!data.username && (error = 'user ID') + (inputRef2.current.focus()) )|| (!data.password && (error = 'password')+ (inputRef3.current.focus()))  || (!data.Repassword && (error = 'Retype Passwors')+ (inputRef4.current.focus()) ) || ((data.Repassword != data.password) && (error = 'same password')) || (!data.checkbox && (error = 'terms & conditions') + 
+        if ( (!data.name && (error = 'name') + (inputRef1.current.focus()) ) || (!data.username && (error = 'user ID') + (inputRef2.current.focus()) )|| (!data.password && (error = 'password')+ (inputRef3.current.focus()))  || (!data.Repassword && (error = 'Retype Password')+ (inputRef4.current.focus()) ) || ((data.Repassword != data.password) && (error = 'same password')) || (!data.checkbox && (error = 'terms & conditions') + 
         (inputRef5.current.style.outline = '1px solid red') ))      {
            setMssage('Please fill ' + error)
             return;

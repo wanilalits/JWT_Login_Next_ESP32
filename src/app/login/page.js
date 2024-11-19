@@ -61,7 +61,7 @@ function Login (props) {
                 <label className={login.title}>Login</label>
                 
                 <label className={login.label3}>User Id</label>
-                <input className={login.textBox} id='2' type="text" autoComplete="off" name="username" placeholder="ID" onChange={(e) => onchangevalue(e)}></input>
+                <input className={login.textBox} id='2' type="text" autoComplete="off" name="username" placeholder="ID" onChange={(e) => onchangevalue(e)}></input> 
                 <label className={login.label3}>Password</label>
                 <input className={login.textBox} id='3' type="text" autoComplete='off' name="password" placeholder="Password" onChange={(e) => onchangevalue(e)}></input>
                 <button className={login.button} onClick={(e) => (onLogin(e))}>&nbsp; Login &nbsp;</button> <br></br>
@@ -76,6 +76,7 @@ function Login (props) {
            User Id : user
             <br></br>
             Password: user
+            <br></br>
 
             </div>
         </>

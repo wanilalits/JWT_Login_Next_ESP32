@@ -1,13 +1,10 @@
 'use client'
-//import Head from 'next/head';
 import Link from "next/link";
 export default function Home() {
 const url='https://lsw-kappa.vercel.app/'
-  
- 
   return (
     <div>
-    <h2>V1.1</h2>
+    <h2>V1.0</h2>
 <br></br>
 
    <Link  href="/register"> Register Link  </Link>
