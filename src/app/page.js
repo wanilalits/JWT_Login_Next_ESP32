@@ -2,7 +2,7 @@
 //import Head from 'next/head';
 import Link from "next/link";
 export default function Home() {
-const url=window.location.href
+const url='https://lsw-kappa.vercel.app/'
   
   console.log(window.location.href)
   return (
