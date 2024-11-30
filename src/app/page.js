@@ -22,7 +22,7 @@ const url='https://lsw-kappa.vercel.app/'
    {url+'login'}
    <br></br>
 <div>
-   <Pot wsdata={'0'} ></Pot>
+  
 </div>
     </div>
   );
