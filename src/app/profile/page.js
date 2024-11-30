@@ -1,196 +1,188 @@
 "use client"
-
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import Dashboard from "./Dashboard.module.css"
-import profile from '@/app/profile1/profile.module.css';
+import _profile from './_profile.module.css'
+
+
 import { useRouter } from 'next/navigation';
+
+import Pot from "../Components/Pot";
+import Thermometer from "../Components/Thermometer";
+import Compass from "../Components/Compass.js";
+import Button1  from "../Components/Buttonslide/Button.js";
+import Colourpicker from "../Components/ColourPicker/Colourpicker";
+import Buttoncontrol from "../Components/ButtonControl/ButtonControl";
+
+
 function page(props) {
+
+  
   const router = useRouter();
+ 
+  const [ws, setWs] = useState(null);
+  const [wbmessage, setWbessage] = useState('');
+  const [clientId, setClientId] = useState('');
+  const [data, setData] = useState(30);
+  var hei = 30
+  
+  useEffect(() => {
+    //Implementing the setInterval method
+    const interval = setInterval(() => {
+      // countClickHandler()
+    }, 5000);
+    //Clearing the interval0
+    return () => clearInterval(interval);
+  }, [data]);
 
-  const oneLogout = async (e) => {
-    let response = await fetch(window.location.origin+'/api/users/profile');
 
-   if (response.status === 200) {
-    router.push('./login')
-    response = await response.json()
-}
+  useEffect(() => {
+    websocketEvents()
 
-}
+  }, []
+  )
 
 
 
 
+  const websocketEvents = () => {
 
-    const [data, setData]= useState(30);
-    var hei=30
-      useEffect(() => {
-        //Implementing the setInterval method
-        const interval = setInterval(() => {
-          countClickHandler()
-        }, 2000);
-        //Clearing the interval0
-        return () => clearInterval(interval);
-    }, [data]);
-    
-    
-     const countClickHandler = () => {setData (Number((Math.random() * (28.00 -30.00) + 28.00).toFixed(2))); 
-     
-      hei=data
-    console.log(hei)
+    const websocket = new WebSocket('wss://nodejswebsocket.onrender.com/');
+
+    websocket.onopen = () => {
+      console.log('WebSocket is connected');
+      // Generate a unique client ID
+      const id = Math.floor(Math.random() * 1000);
+      setClientId(id);
     };
 
+    websocket.onmessage = (evt) => {
+      console.log (evt.data)
+
+    setWbessage(JSON.parse(evt.data.slice(8)))
+//console.log (JSON.parse(evt.data.slice(8)).s1)
+
+};
+
+    websocket.onclose = () => {
+    };
+
+    setWs(websocket);
+    return () => { websocket.close(); };
+  }
+
+  const oneLogout = async (e) => {
+    let response = await fetch(window.location.origin + '/api/users/profile');
+    if (response.status === 200) {
+      router.push('./login')
+      response = await response.json()
+    }
+  }
+
+  const countClickHandler = () => {
+    setData(Number((Math.random() * (28.00 - 30.00) + 28.00).toFixed(2)));
+    hei = data
+  };
+
+  return (
+    <div>
 
 
 
+<div className={_profile.main}>
+     <div className={_profile.box1}>  <Thermometer wsdata={wbmessage.t}></Thermometer> </div>
+   
+     <div className={_profile.box2}>  
+     <div className={_profile.box21}>Humidity </div>
+     <div className={_profile.box22}>Air Pr </div>
+     <div className={_profile.box23}>
 
+     <div className={_profile.box231} id="1"><Button1  wsdata={wbmessage.s1} ></Button1> </div>
+     <div className={_profile.box231}id="2"><Button1  wsdata={wbmessage.s2}></Button1></div>
+     <div className={_profile.box231} id="3"><Button1 wsdata={wbmessage.s3} ></Button1></div>
+     <div className={_profile.box231}id="4"><Button1  wsdata={wbmessage.s4}></Button1></div>
 
-    return (
-        <>
+      </div>
+     <div className={_profile.box24}> <Compass wsdata={wbmessage.c}></Compass> </div>
+     </div>
 
-<div className={profile.profile}  >
-             
-             <div className={profile.profile1} onClick={(e) => (oneLogout(e))}  >  </div>
-          
-         </div>
-         <button onClick={(e) => (oneLogout(e))}>&nbsp; LogOut &nbsp;</button>  &nbsp;
-         <br></br> <br></br>
+     <div className={_profile.box3}>
+     <div className={_profile.box31}><div style={{height:'120px'}}><Pot wsdata={wbmessage.p} ></Pot> </div>  </div>
+     <div className={_profile.box32}>
+     <div></div>
+   
 
+     <div className={_profile.b321}></div>
+     <div className={_profile.b322}></div>
+     <div className={_profile.b323}></div>
 
-  <div className={Dashboard.mainbox}>
-
-    <div className={Dashboard.box}>
-         
-  
-<div className={Dashboard.box1}>
-<div className={Dashboard.ThermameterOBody}>
-<div className={Dashboard.ThermameterTube}> <div className={Dashboard.ThermameterITube} style={{transform: 'translate(-50%,'+(250-(data*5) )+'px) ',height: data*5+'px', transition: 'transform 1s, height  1s' } }   ></div></div>
-<div className={Dashboard.ThermameterBulb}></div>
-<div className={Dashboard.ThermameterIBulb}></div>
-<div className={Dashboard.ThermamerRuler}> 
- <>
-<hr className={Dashboard.hr2}/>
-
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/> 
-
-<hr className={Dashboard.hr2}/>
-
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/> 
-
-<hr className={Dashboard.hr2}/>
-
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/> 
-
-<hr className={Dashboard.hr2}/>
-
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/> 
-
-<hr className={Dashboard.hr2}/>
-
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/> 
-<hr className={Dashboard.hr1}/>
-<hr className={Dashboard.hr1}/>
-
-<hr className={Dashboard.hr2}/>
-</>
-</div>
-<div className={Dashboard.ThermamerRulerText}>
- <p >50</p> 
- <p >40</p>
- <p >30</p>
- <p >20</p>
- <p >10</p>
- <p >00</p>
+     <div className={_profile.b324}></div>
+     <div className={_profile.b325}></div>
+     <div className={_profile.b326}></div>
+     <div className={_profile.b327}></div>
+     <div className={_profile.b328}></div>
+     </div>
+     </div>
+    
+    
+     <div className={_profile.box4}>
+     <div className={_profile.box41}><Colourpicker></Colourpicker> </div>
+     <div className={_profile.box42}>
+    <Buttoncontrol></Buttoncontrol>
+      </div>
  </div>
- <div className={Dashboard.ThermameterInfo}>Temprature <br></br> {data}°C <br></br> {((data*9/5)+32).toFixed(2)}°F</div>
-</div>
+      
+      </div>
 
 
 
-</div>
-<div>
-<div className={Dashboard.box2}></div>
-<div className={Dashboard.box2}>Sensor 1</div>
-</div> 
- 
-  
-  <div className={Dashboard.Controlbox}>Controlbox</div>
-  <div>
-<div className={Dashboard.box3}>
-<div className={Dashboard.CompassBody}  style={{transform: 'rotate('+(data-28)*180+'deg)', transition: 'transform 1s' } }>
-<div className={Dashboard.CompassN}>N</div>
-<div className={Dashboard.CompassS}>S</div>
-<div className={Dashboard.CompassE}>E</div>
-<div className={Dashboard.CompassW}>W</div>
+   
 
+    
+        <div onClick={(e) => (oneLogout(e))}  >  </div>
+    
 
-</div>
-<div className={Dashboard.CompassBody1}></div>
-<div className={Dashboard.CompassDot}></div>
-<div className={Dashboard.CompassNeedle}  >
-<div className={Dashboard.CompassNeedleN}></div>
-<div className={Dashboard.CompassNeedleS}></div>
-</div>
-
-
-</div>
-<div className={Dashboard.box3}>
+      <button onClick={(e) => (oneLogout(e))}>&nbsp; LogOut &nbsp;</button>  &nbsp;
+      <br></br> <br></br>
 
 
 
-  
-</div>
-</div>
-
-          </div> 
-          </div> 
-
-
-          <div className={Dashboard.TThermamerRulerText}> ....................</div>
-
-       
-        </>
-    );
+    </div>
+  );
 }
 
 export default page;
 
-//
+/*
+
+
+   <div className={Dashboard.mainbox}>
+        <div className={Dashboard.box}>
+          <div className={Dashboard.box1}>
+            <Thermometer wsdata={wbmessage.t}></Thermometer>
+          </div>
+
+          <div>
+            <div className={Dashboard.box2}> box2</div>
+            <div className={Dashboard.box2}>
+              <Pot wsdata={wbmessage.p} ></Pot>
+            </div>
+          </div>
+
+          <div className={Dashboard.Controlbox}>Controlbox</div>
+
+          <div>
+            <>
+              <Compass wsdata={wbmessage.c}></Compass>
+            </>
+            <div className={Dashboard.box3}>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+*/

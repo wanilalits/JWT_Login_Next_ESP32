@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 function Register(props) {
+  
+    
     const [data, setData] = useState({ name: '', username: '', password: '' })
     const [message, setMssage] = useState("")
     var error

@@ -1,5 +1,7 @@
 'use client'
 import Link from "next/link";
+
+import Pot from './Components/Pot'
 export default function Home() {
 const url='https://lsw-kappa.vercel.app/'
   return (
@@ -19,9 +21,9 @@ const url='https://lsw-kappa.vercel.app/'
    <br></br>
    {url+'login'}
    <br></br>
-
-
-
+<div>
+   <Pot wsdata={'0'} ></Pot>
+</div>
     </div>
   );
 }

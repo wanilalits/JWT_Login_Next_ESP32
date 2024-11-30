@@ -1,0 +1,245 @@
+
+
+.main {
+  position: relative;
+  width: 100%;
+    padding: 5px;
+    border: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+
+.box1 {
+
+    background-color: rgb(220, 221, 178);
+    width: 200px;
+    height: 360px;
+    box-sizing: border-box;
+margin: 0px 5px 0px 0px;
+
+}
+
+.box2 {
+   position: relative;
+    background-color: rgb(186, 187, 139);
+    width: 180px;
+    min-height: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content:flex-start;
+padding: 0px;
+row-gap: 0px;
+column-gap: 0px;
+}
+
+
+.box21 {
+ position: relative;
+background-color: rgb(187, 162, 139);
+height: 80px;
+width: 82px;
+box-sizing: border-box;
+margin-top: 5px;
+
+margin-left: 5px;
+margin-bottom: 5px;
+}
+
+.box22 {
+    position: relative;;
+    background-color: rgb(187, 162, 139);
+    height: 80px;
+    width: 82px;
+    box-sizing: border-box;
+    margin:5px;
+    margin-bottom: 5px;
+}
+
+
+.box23 {
+    
+position: relative;
+background-color: rgb(187, 162, 139);
+width: 170px;
+height: 80px;
+ box-sizing: border-box;
+margin: 0px 0px 0px 5px;
+   
+}
+
+.box231
+{position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 42.5px;
+  height: 80px;
+  border: 1px, solid, rgb(212, 181, 181) ;
+  
+ 
+}
+
+
+.box24 {
+  
+    position: relative;
+    background-color: rgb(187, 162, 139);
+  width: 170px;
+height: 170px;
+    box-sizing: border-box;
+  margin: 5px 0px 0px 5px;
+}
+
+
+.box3 {
+
+    background-color: rgb(186, 187, 139);
+    width: 130px;
+    height:360px;
+    box-sizing: border-box;
+    margin: 3px;
+}
+
+.box31 {
+  
+    position: relative;
+    background-color: rgb(187, 162, 139);
+  width: 120px;
+height: 140px;
+    box-sizing: border-box;
+  margin: 5px 0px 0px 5px;
+}
+
+.box32 {
+  
+    position: relative;
+    background-color: rgb(187, 162, 139);
+  width: 120px;
+height: 140px;
+    box-sizing: border-box;
+  margin: 5px 0px 0px 5px;
+}
+
+.b321{
+  position: absolute;
+  display:  inline-block;
+  width: 20px;
+height: 15px;
+background-color: rgb(231, 227, 202);
+border-radius:5px ;
+
+}
+
+.b322{
+  position: absolute;
+  display:  inline-block;
+  width: 20px;
+height: 20px;
+background-color: rgb(231, 227, 202);
+left: 50%;
+transform: translate(-50% , 0% );
+border-radius:5px ;
+}
+.b323{
+  position: absolute;
+  display:  inline-block;
+  width: 20px;
+height: 15px;
+background-color: rgb(231, 227, 202);
+left: 100%;
+transform: translate(-100% , 0% );
+border-radius:5px ;
+}
+.b324{
+  position: absolute;
+  display:  inline-block;
+  width: 20px;
+height: 20px;
+background-color: rgb(231, 227, 202);
+left: 50%;
+top:30%;
+transform: translate(-50% , 0% );
+border-radius:5px ;
+}
+.b325{
+  position: absolute;
+  display:  inline-block;
+  width: 20px;
+height: 20px;
+background-color:rgb(231, 227, 202);
+left: 10%;
+top:60%;
+transform: translate(-0% , -50% );
+border-radius:5px ;
+}
+.b326{
+  position: absolute;
+  display:  inline-block;
+  width: 25px;
+height: 25px;
+background-color: rgb(231, 227, 202);
+left:   50%;
+top: 60%;
+transform: translate(-50% , -50% );
+border-radius:5px ;
+}
+.b327{
+  position: absolute;
+  display:  inline-block;
+  width: 20px;
+height: 20px;
+background-color: rgb(231, 227, 202);
+right:  10%;
+top: 60%;
+transform: translate(0% , -50% );
+border-radius:5px ;
+}
+
+.b328{
+  position: absolute;
+  display:  inline-block;
+  width: 20px;
+height: 20px;
+background-color: rgb(231, 227, 202);
+left: 50%;
+bottom: 10%;
+transform: translate(-50% , 0% );
+border-radius:5px ;
+}
+
+.box4 {
+
+    background-color: rgb(186, 187, 139);
+    width: 220px;
+    height: 360px;
+    box-sizing: border-box;
+    margin: 3px;
+}
+
+.box41 {
+position: relative;
+left: 50%;
+transform: translate(-50%,0%);
+   background-color: rgb(187, 162, 139);
+    width: 210px;
+    height: 240px;
+    box-sizing: border-box;
+  margin: 3px 0px 0px 0px ;
+  
+  
+}
+
+.box42 {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%,0%);
+  padding-top: 5px;
+    background-color: rgb(187, 162, 139);
+     width: 210px;
+     height: 100px;
+     box-sizing: border-box;
+     margin: 10px 0px 0px 0px ;
+
+ }
+

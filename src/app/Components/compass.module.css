@@ -1,0 +1,114 @@
+.box3 {
+    border: 1px solid rgb(100, 34, 185);
+    background-color: rgb(72, 223, 165);
+    height: 160px;
+    width: 160px;
+    border-radius: 2%;
+    position: relative;
+    top :50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+.CompassBody
+{
+  position: absolute;
+  background-color: rgb(60, 207, 2);
+  height: 90%;
+  width: 90%;
+  border-radius: 50%;
+  top: 5%;
+  left: 5%;
+}
+
+.CompassBody1
+{
+  position: absolute;
+  background-color: rgb(91, 2, 207);
+  height: 70%;
+  width: 70%;
+  border-radius: 50%;
+  top: 15%;
+  left: 15%;
+}
+
+.CompassDot
+{
+  position: absolute;
+  background-color: rgb(145, 125, 170);
+  height: 10%;
+  width: 10%;
+  border-radius: 50%;
+  top: 45%;
+  left: 45%;
+  z-index: 5;
+}
+
+.CompassNeedle
+{box-sizing: border-box;
+  position: absolute;
+  height: 70%;
+  width: 8%;
+  top: 15%;
+  left: 46%;
+  
+
+}
+
+.CompassNeedleN
+{box-sizing: border-box;
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  border-bottom: 55px solid rgb(253, 41, 69);
+  border-left: 6.5px solid transparent;
+  border-right: 6.5px solid transparent;
+  
+}
+
+.CompassNeedleS
+{box-sizing: border-box;
+  position: absolute;
+  height: 0%;
+  width: 0%;
+  bottom: 0%;
+  border-top: 55px solid rgb(0, 0, 0);
+  border-left: 6.5px solid transparent;
+  border-right: 6.5px solid transparent;
+}
+
+.CompassN
+{box-sizing: border-box;
+  position: absolute;
+  top: 0%;
+ left: 50%;
+ font-size: 100%;
+ transform: translateX(-50%);
+}
+
+.CompassS
+{
+  position: absolute;
+  top: 100%;
+ left: 50%;
+ transform: translate(-50%, -80%);
+}
+
+.CompassE
+{
+  position: absolute;
+  top: 50%; 
+  right: 0%;
+  transform: translate(0% ,-50%);
+
+}
+
+.CompassW
+{
+  position: absolute;
+  top: 50%; 
+  left: 0%;
+  transform: translate(0% ,-50%);
+
+}

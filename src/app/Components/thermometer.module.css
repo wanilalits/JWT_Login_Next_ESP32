@@ -1,0 +1,102 @@
+.ThermameterOBody
+{position: relative;
+height: 98.3%;
+width: 97%;
+background-color: aliceblue;
+border-radius: 5px;
+box-sizing: border-box;
+top :50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+.ThermameterTube{
+height:300px ;
+width: 18px;
+background-color: rgb(201, 210, 218);
+border: 1px solid rgb(0, 0, 0);
+transform: translate(40px, 5px);
+border-radius: 17px;
+box-shadow: 3px 3px 1px 1px #ccc;
+}
+
+.ThermameterBulb{
+height: 50px;
+width: 50px;
+border: 1px solid rgb(0, 0, 0);
+background-color: rgb(201, 210, 218);
+border-radius: 100%;
+transform: translate(24px, -10px);
+position: relative;
+z-index: -1;
+box-shadow: 2px -0px 1px 2px #ccc;
+}
+.ThermameterITube{
+  width: 10px;
+  margin-left: 50%;
+  background-color: rgb(175, 9, 9);
+  border-radius: 10px;
+  height: 300px;
+  transform: translate(-50%,0px);
+
+}
+
+.ThermameterIBulb
+{
+  height: 30px;
+  width: 30px;
+  background-color: rgb(175, 9, 9);
+  border-radius: 15px;
+  transform: translate(34px, -60px);
+ 
+}
+
+.ThermamerRuler{
+position: absolute;
+  height: 300px;
+  width: 15px;
+  top :5px;
+  transform: translate(20px,-0px);
+}
+
+.ThermamerRulerText{
+position: absolute;
+  top: 0%;
+transform: translate(5px, -22px);
+line-height: 48px;
+color: rgb(0, 9, 129);
+font-size: 10px;
+}
+
+
+.hr1{
+  
+  border-top: 1px solid red;
+  box-sizing: border-box;
+ width: 10px;
+ margin: 0px;
+ margin-bottom: 4px;
+ transform: translate(50% , 100%);
+}
+
+.hr2{
+  position: relative;
+  border-top: 1px solid rgb(97, 19, 199);
+  box-sizing: border-box;
+  width: 15px;
+  margin: 0px;
+  transform: translateY(100%);
+  margin-bottom: 4px;
+
+}
+
+.ThermameterInfo
+{
+ position: absolute;
+  border: 1px solid rgb(97, 19, 199);
+ top :20%;
+ left: 40%;
+ line-height: 130%;
+font-weight: 600;
+text-align: center;
+}

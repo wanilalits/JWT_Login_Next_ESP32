@@ -1,0 +1,51 @@
+.background
+{  position: relative;
+    height : 100%;
+    width: 100%;
+}
+
+.outer
+{position: absolute;
+    height: 90%;
+    width: 90%;
+    background-color: rgb(19, 19, 197);
+    top:5%;
+    left: 5%;
+box-sizing: border-box;
+}
+
+.knowb
+{position: absolute;
+    height: 70%;
+    width: 70%;
+    border-radius: 100%;
+    background-color: rgb(103, 24, 206);
+    top:15%;
+    left: 15%;
+box-sizing: border-box;
+}
+
+.arrow
+{
+    position: absolute;
+    height: 8%;
+    width: 77%;
+    background-color: rgb(206, 106, 24);
+    top:46%;
+    left: 13%;
+box-sizing: border-box;
+
+
+}
+
+.leftarrow{
+    position: absolute;
+border: solid black;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 8px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  top:-95%;
+  left: 1%;
+}

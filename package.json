@@ -10,13 +10,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/material": "^6.1.8",
+    "@mui/styled-engine-sc": "^6.1.8",
     "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.7.2",
     "next": "14.2.15",
     "react": "^18",
+    "react-color": "^2.19.3",
     "react-dom": "^18",
+    "react-use-websocket": "^4.11.1",
     "socket.io": "^4.8.1",
-    "socket.io-client": "^4.8.1"
+    "socket.io-client": "^4.8.1",
+    "styled-components": "^6.1.13"
   }
 }

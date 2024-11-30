@@ -64,6 +64,7 @@ function Login (props) {
                 <input className={login.textBox} id='2' type="text" autoComplete="off" name="username" placeholder="ID" onChange={(e) => onchangevalue(e)}></input> 
                 <label className={login.label3}>Password</label>
                 <input className={login.textBox} id='3' type="text" autoComplete='off' name="password" placeholder="Password" onChange={(e) => onchangevalue(e)}></input>
+                <br></br>
                 <button className={login.button} onClick={(e) => (onLogin(e))}>&nbsp; Login &nbsp;</button> <br></br>
                
                <label className={login.lebel2}>Don't have an account?</label> <Link className={login.link} href="/register"> Sign Up</Link>

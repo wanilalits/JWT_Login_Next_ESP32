@@ -14,7 +14,7 @@ function Profile() {
         console.log('Component mounted');
         let value = localStorage.getItem("value");
         value = JSON.parse(value)
-     
+        console.log(value);
         setData1(value.data[1])//
         return () => {
             console.log('Component unmounted');

@@ -1,0 +1,10 @@
+.box {
+  position: absolute;
+  rotate: -90deg;
+top: 25%;
+left: -25%;
+transform: translate( -00%,-0%);
+box-sizing: border-box;
+
+  }
+  
