@@ -123,9 +123,9 @@ function page(props) {
     
     
      <div className={_profile.box4}>
-<globelInfo.Provider value={{yourFunction :'yourFunction'}}>
-     <div className={_profile.box41}><Colourpicker ></Colourpicker> </div>
-     </globelInfo.Provider>
+
+     <div className={_profile.box41}></div>
+    
      <div className={_profile.box42}>
     
       </div>
