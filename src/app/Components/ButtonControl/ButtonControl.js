@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react'
 //import _buttonControl from './_buttonControl.module.css'
-import _buttonControl  from './_buttonControl.module.css'
+import buttonControl  from './buttonControl.module.css'
 
 
 let data;
@@ -140,14 +140,14 @@ const ButtonControl = (props) => {
 
     return (
         <>
-            <div className={_buttonControl.b321} ref={inputRef1}></div>
-            <div className={_buttonControl.b322} ref={inputRef8}></div>
-            <div className={_buttonControl.b323} ref={inputRef3}></div>
-            <div className={_buttonControl.b324} ref={inputRef2}> </div>
-            <div className={_buttonControl.b325} ref={inputRef4} ></div>
-            <div className={_buttonControl.b326} ref={inputRef5} ></div>
-            <div className={_buttonControl.b327} ref={inputRef6}> </div>
-            <div className={_buttonControl.b328} ref={inputRef7}></div>
+            <div className={buttonControl.b321} ref={inputRef1}></div>
+            <div className={buttonControl.b322} ref={inputRef8}></div>
+            <div className={buttonControl.b323} ref={inputRef3}></div>
+            <div className={buttonControl.b324} ref={inputRef2}> </div>
+            <div className={buttonControl.b325} ref={inputRef4} ></div>
+            <div className={buttonControl.b326} ref={inputRef5} ></div>
+            <div className={buttonControl.b327} ref={inputRef6}> </div>
+            <div className={buttonControl.b328} ref={inputRef7}></div>
         </>
 
     )
