@@ -32,6 +32,7 @@ var b=rgb.b
    
     
    
+      
    <div>
       <ChromePicker  styles={pickerStyle}
             color={color}

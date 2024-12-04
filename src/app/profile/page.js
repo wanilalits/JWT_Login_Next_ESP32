@@ -35,7 +35,6 @@ function page(props) {
 
   useEffect(() => {
     websocketEvents()
-
   }, []
   )
 
