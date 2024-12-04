@@ -34,8 +34,7 @@ var b=rgb.b
    
    <div>
       <ChromePicker  styles={pickerStyle}
-            color={color}
-            onChange={(updatedColor) => {RGBvalue(updatedColor.rgb) } } />
+            color={color}  onChange={(updatedColor) => {RGBvalue(updatedColor.hex) } } />
      
     </div>
   
