@@ -1,7 +1,10 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { SketchPicker,ChromePicker } from 'react-color';
- const Colourpicker = (props) => {
+
+import { globelInfo } from '@/app/profile/page';
+const Colourpicker = () => {
+  const {yourFunction}=useContext( globelInfo);
     const [color, setColor] = useState("#FF0000");
     const [hidden, setHidden] = useState(false);
     const pickerStyle = {
@@ -32,11 +35,10 @@ var b=rgb.b
    
     
    
-      
    <div>
       <ChromePicker  styles={pickerStyle}
             color={color}
-            onChange={(updatedColor) => {RGBvalue(updatedColor.rgb) ,  props.action(color)} }  />
+            onChange={(updatedColor) => {RGBvalue(updatedColor.rgb) ,  yourFunction(color)} }  />
      
     </div>
   

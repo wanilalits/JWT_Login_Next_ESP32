@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 
 import _profile from './_profile.module.css'
 import { useRouter } from 'next/navigation';
@@ -10,7 +10,7 @@ import Compass from "../Components/Compass.js";
 import Colourpicker from "../Components/ColourPicker/Colourpicker";
 import SwitchControl from "../Components/SwitchControl/SwitchControl";
 import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
-
+export const globelInfo=createContext();
 
 function page(props) {
 
@@ -35,19 +35,17 @@ function page(props) {
 
   useEffect(() => {
     websocketEvents()
+
   }, []
   )
 
 
-  function yourFunction(data) {
+  const  yourFunction=(data)=> {
     console.log(data)
-   
     if (ws) {
       ws.send(JSON.stringify({
           led: data,
-          
       }));
-      
   }
 
   };
@@ -125,7 +123,9 @@ function page(props) {
     
     
      <div className={_profile.box4}>
-     <div className={_profile.box41}><Colourpicker action={yourFunction}></Colourpicker> </div>
+<globelInfo.Provider value={{yourFunction :yourFunction}}>
+     <div className={_profile.box41}><Colourpicker ></Colourpicker> </div>
+     </globelInfo.Provider>
      <div className={_profile.box42}>
     
       </div>
@@ -155,32 +155,9 @@ export default page;
 /*
 
 
-   <div className={Dashboard.mainbox}>
-        <div className={Dashboard.box}>
-          <div className={Dashboard.box1}>
-            <Thermometer wsdata={wbmessage.t}></Thermometer>
-          </div>
-
-          <div>
-            <div className={Dashboard.box2}> box2</div>
-            <div className={Dashboard.box2}>
-              <Pot wsdata={wbmessage.p} ></Pot>
-            </div>
-          </div>
-
-          <div className={Dashboard.Controlbox}>Controlbox</div>
-
-          <div>
-            <>
-              <Compass wsdata={wbmessage.c}></Compass>
-            </>
-            <div className={Dashboard.box3}>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
+  <globelInfo.Provider value={{yourFunction :yourFunction}}>
+     <div className={_profile.box41}><Colourpicker action={'yourFunction'}></Colourpicker> </div>
+     </globelInfo.Provider>
 
 
 
