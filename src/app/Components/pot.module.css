@@ -36,23 +36,27 @@ inset 4px 4px 3px rgba(145, 188, 245, 0.658),
     position: absolute;
     height: 8%;
     width: 77%;
-    background-color: rgb(206, 106, 24);
+    background-color:rgb(175, 219, 199);
     top:46%;
     left: 13%;
 box-sizing: border-box;
 
-
+box-shadow:
+ inset 1px 1px 4px rgba(-3, -3, 3, 0.658);
 }
 
 
 
 .leftarrow{
     position: absolute;
-border: solid black;
+border: solid rgba(175, 219, 199, 0.863);
   border-width: 0px 0px 5px 5px;
   padding: 8px;
  transform: translate(0%, -50%) ;
 rotate : 45deg ;
  box-sizing: border-box;
  left: -15%;
+ box-shadow:
+ inset 10px -0px -5px rgba(-3, -3, 3, 0.658);
+
 }
