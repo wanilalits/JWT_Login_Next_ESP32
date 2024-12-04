@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import { SketchPicker,ChromePicker } from 'react-color';
- const Colourpicker = () => {
-    const [color, setColor] = useState("red");
+ const Colourpicker = (props) => {
+    const [color, setColor] = useState("#FF0000");
     const [hidden, setHidden] = useState(false);
     const pickerStyle = {
       default: {
@@ -13,7 +13,21 @@ import { SketchPicker,ChromePicker } from 'react-color';
         }
       }
     };
-   
+  
+const RGBvalue=(rgb)=>{
+  setColor(rgb)
+  setHidden(rgb.r)
+  
+var r=rgb.r
+var g=rgb.g
+var b=rgb.b
+  //a= a.slice(1, -3)
+
+  
+
+}
+
+
     return (
    
     
@@ -21,9 +35,10 @@ import { SketchPicker,ChromePicker } from 'react-color';
    <div>
       <ChromePicker  styles={pickerStyle}
             color={color}
-            onChange={(updatedColor) => setColor(updatedColor.hex)}  />
-      
+            onChange={(updatedColor) => {RGBvalue(updatedColor.rgb) ,  props.action(color)} }  />
+     
     </div>
+  
   )
 }
 export default Colourpicker;

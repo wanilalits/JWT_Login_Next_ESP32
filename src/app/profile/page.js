@@ -1,18 +1,15 @@
 "use client"
 import { useState, useEffect } from "react";
 
-import Dashboard from "./Dashboard.module.css"
 import _profile from './_profile.module.css'
-
-
 import { useRouter } from 'next/navigation';
 
 import Pot from "../Components/Pot";
 import Thermometer from "../Components/Thermometer";
 import Compass from "../Components/Compass.js";
-import Button1  from "../Components/Buttonslide/Button.js";
 import Colourpicker from "../Components/ColourPicker/Colourpicker";
-import Buttoncontrol from "../Components/ButtonControl/ButtonControl";
+import SwitchControl from "../Components/SwitchControl/SwitchControl";
+import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
 
 
 function page(props) {
@@ -43,6 +40,18 @@ function page(props) {
   )
 
 
+  function yourFunction(data) {
+    console.log(data)
+   
+    if (ws) {
+      ws.send(JSON.stringify({
+          led: data,
+          
+      }));
+      
+  }
+
+  };
 
 
   const websocketEvents = () => {
@@ -57,10 +66,10 @@ function page(props) {
     };
 
     websocket.onmessage = (evt) => {
-      console.log (evt.data)
-
+     // console.log (evt.data)
+     //console.log (JSON.parse(evt.data.slice(8)))
     setWbessage(JSON.parse(evt.data.slice(8)))
-//console.log (JSON.parse(evt.data.slice(8)).s1)
+
 
 };
 
@@ -97,10 +106,10 @@ function page(props) {
      <div className={_profile.box22}>Air Pr </div>
      <div className={_profile.box23}>
 
-     <div className={_profile.box231} id="1"><Button1  wsdata={wbmessage.s1} ></Button1> </div>
-     <div className={_profile.box231}id="2"><Button1  wsdata={wbmessage.s2}></Button1></div>
-     <div className={_profile.box231} id="3"><Button1 wsdata={wbmessage.s3} ></Button1></div>
-     <div className={_profile.box231}id="4"><Button1  wsdata={wbmessage.s4}></Button1></div>
+     <div className={_profile.box231}><SwitchControl  wsdata={wbmessage.s1} ></SwitchControl> </div>
+     <div className={_profile.box231}><SwitchControl  wsdata={wbmessage.s2}></SwitchControl></div>
+     <div className={_profile.box231} ><SwitchControl wsdata={wbmessage.s3} ></SwitchControl></div>
+     <div className={_profile.box231}><SwitchControl  wsdata={wbmessage.s4}></SwitchControl></div>
 
       </div>
      <div className={_profile.box24}> <Compass wsdata={wbmessage.c}></Compass> </div>
@@ -108,27 +117,18 @@ function page(props) {
 
      <div className={_profile.box3}>
      <div className={_profile.box31}><div style={{height:'120px'}}><Pot wsdata={wbmessage.p} ></Pot> </div>  </div>
+     
      <div className={_profile.box32}>
-     <div></div>
-   
+      <ButtonControl wsdata={wbmessage.b}></ButtonControl>
 
-     <div className={_profile.b321}></div>
-     <div className={_profile.b322}></div>
-     <div className={_profile.b323}></div>
-
-     <div className={_profile.b324}></div>
-     <div className={_profile.b325}></div>
-     <div className={_profile.b326}></div>
-     <div className={_profile.b327}></div>
-     <div className={_profile.b328}></div>
      </div>
      </div>
     
     
      <div className={_profile.box4}>
-     <div className={_profile.box41}><Colourpicker></Colourpicker> </div>
+     <div className={_profile.box41}><Colourpicker action={yourFunction}></Colourpicker> </div>
      <div className={_profile.box42}>
-    <Buttoncontrol></Buttoncontrol>
+    
       </div>
  </div>
       

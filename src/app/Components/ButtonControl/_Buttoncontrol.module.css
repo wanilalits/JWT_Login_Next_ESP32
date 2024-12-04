@@ -1,8 +1,87 @@
-.box1{
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: brown;
-}
-
+.b321{
+    position: absolute;
+    display:  inline-block;
+    width: 20px;
+  height: 15px;
+  background-color: rgb(231, 227, 202);
+  border-radius:5px ;
+  
+  }
+  
+  .b322{
+    position: absolute;
+    display:  inline-block;
+    width: 20px;
+  height: 20px;
+  background-color: rgb(231, 227, 202);
+  left: 50%;
+  transform: translate(-50% , 0% );
+  border-radius:5px ;
+  }
+  .b323{
+    position: absolute;
+    display:  inline-block;
+    width: 20px;
+  height: 15px;
+  background-color: rgb(231, 227, 202);
+  left: 100%;
+  transform: translate(-100% , 0% );
+  border-radius:5px ;
+  }
+  .b324{
+    position: absolute;
+    display:  inline-block;
+    width: 20px;
+  height: 20px;
+  background-color: rgb(231, 227, 202);
+  left: 50%;
+  top:30%;
+  transform: translate(-50% , 0% );
+  border-radius:5px ;
+  }
+  .b325{
+    position: absolute;
+    display:  inline-block;
+    width: 20px;
+  height: 20px;
+  background-color:rgb(231, 227, 202);
+  left: 10%;
+  top:60%;
+  transform: translate(-0% , -50% );
+  border-radius:5px ;
+  }
+  .b326{
+    position: absolute;
+    display:  inline-block;
+    width: 25px;
+  height: 25px;
+  background-color: rgb(231, 227, 202);
+  left:   50%;
+  top: 60%;
+  transform: translate(-50% , -50% );
+  border-radius:5px ;
+  }
+  .b327{
+    position: absolute;
+    display:  inline-block;
+    width: 20px;
+  height: 20px;
+  background-color: rgb(231, 227, 202);
+  right:  10%;
+  top: 60%;
+  transform: translate(0% , -50% );
+  border-radius:5px ;
+  }
+  
+  .b328{
+    position: absolute;
+    display:  inline-block;
+    width: 20px;
+  height: 20px;
+  background-color: rgb(231, 227, 202);
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50% , 0% );
+  border-radius:5px ;
+  }
+  
