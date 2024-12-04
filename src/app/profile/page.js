@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 
 import _profile from './_profile.module.css'
 import { useRouter } from 'next/navigation';
-
 import Pot from "../Components/Pot";
 import Thermometer from "../Components/Thermometer";
 import Compass from "../Components/Compass.js";
@@ -13,7 +12,6 @@ import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
 
 
 function page(props) {
-
   
   const router = useRouter();
  
@@ -24,7 +22,7 @@ function page(props) {
   var hei = 30
   
   useEffect(() => {
-    //Implementing the setInterval method
+    //Implementing the setInterval method..
     const interval = setInterval(() => {
       // countClickHandler()
     }, 5000);
