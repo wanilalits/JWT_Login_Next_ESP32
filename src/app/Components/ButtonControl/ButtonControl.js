@@ -1,7 +1,7 @@
 
 import React, { useRef } from 'react'
 //import _buttonControl from './_buttonControl.module.css'
-import _buttonControlfrom from './_buttonControl.module.css'
+import _buttonControl  from './_buttonControl.module.css'
 
 
 let data;
