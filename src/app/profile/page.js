@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import Pot from "../Components/Pot";
 import Thermometer from "../Components/Thermometer";
 import Compass from "../Components/Compass.js";
-//import Colourpicker from "../Components/ColourPicker/Colourpicker";
+import Colourpicker from "../Components/ColourPicker/Colourpicker";
 import SwitchControl from "../Components/SwitchControl/SwitchControl";
 import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
 
@@ -122,7 +122,7 @@ function page(props) {
     
      <div className={_profile.box4}>
 
-     <div className={_profile.box41}></div>
+     <div className={_profile.box41}><Colourpicker action={yourFunction}></Colourpicker> </div>
     
      <div className={_profile.box42}>
     
