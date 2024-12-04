@@ -38,14 +38,15 @@ box-sizing: border-box;
 
 }
 
+
+
 .leftarrow{
     position: absolute;
 border: solid black;
-  border-width: 0 6px 6px 0;
-  display: inline-block;
+  border-width: 0px 0px 5px 5px;
   padding: 8px;
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-  top:-95%;
-  left: 1%;
+ transform: translate(0%, -50%) ;
+rotate : 45deg ;
+ box-sizing: border-box;
+ left: -15%;
 }
