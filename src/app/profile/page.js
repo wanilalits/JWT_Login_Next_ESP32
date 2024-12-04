@@ -9,6 +9,7 @@ import Compass from "../Components/Compass.js";
 import Colourpicker from "../Components/ColourPicker/Colourpicker";
 import SwitchControl from "../Components/SwitchControl/SwitchControl";
 import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
+import Control  from "../Components/Control/Control";
 
 
 function page(props) {
@@ -124,9 +125,7 @@ function page(props) {
 
      <div className={_profile.box41}><Colourpicker action={yourFunction}></Colourpicker> </div>
     
-     <div className={_profile.box42}>
-    
-      </div>
+     <div className={_profile.box42}> <Control></Control></div>
  </div>
       
       </div>

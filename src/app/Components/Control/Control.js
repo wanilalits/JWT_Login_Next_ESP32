@@ -1,5 +1,5 @@
 import React from 'react'
-import _SwitchControl from './_SwitchControl.module.css'
+import _control from './_control.module.css'
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
@@ -9,10 +9,10 @@ function valuetext(value) {
   }
   
 
-const Switch1= () => {
+const Control= () => {
   return (
     <> 
-    <div className={_Buttoncontrol.box1}>
+    <div className={_control.box1}>
     <button>Buzzer</button> 
     <button>Screen</button> 
     <button>Vibrator</button>
@@ -36,4 +36,4 @@ const Switch1= () => {
 
 
 
-export default Switch1;
+export default Control;
