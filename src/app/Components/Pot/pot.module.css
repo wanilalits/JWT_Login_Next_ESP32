@@ -1,0 +1,58 @@
+.background {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.outer {
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    background-color: rgb(0, 0, 256);
+    top: 5%;
+    left: 5%;
+    box-sizing: border-box;
+}
+
+.knowb {
+    position: absolute;
+    height: 70%;
+    width: 70%;
+    border-radius: 100%;
+    background-color: rgb(6, 6, 240);
+    top: 15%;
+    left: 15%;
+    box-sizing: border-box;
+    box-shadow:
+        inset 2px 2px 5px rgba(145, 188, 245, 0.658),
+        2px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.arrow {
+    position: absolute;
+    height: 8%;
+    width: 77%;
+    background-color: rgb(175, 219, 199);
+    top: 46%;
+    left: 13%;
+    box-sizing: border-box;
+
+    box-shadow:
+        inset 1px 1px 4px rgba(-3, -3, 3, 0.658);
+}
+
+
+
+.leftarrow {
+    position: absolute;
+    border: solid rgba(175, 219, 199, 0.863);
+    border-width: 0px 0px 5px 5px;
+    padding: 8px;
+    transform: translate(0%, -50%);
+    rotate: 45deg;
+    box-sizing: border-box;
+    left: -15%;
+    box-shadow:
+        inset 10px -0px -5px rgba(-3, -3, 3, 0.658);
+
+}

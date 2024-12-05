@@ -8,7 +8,7 @@ function Pot(props) {
         <div className={pot.background}>
 
             <div className={pot.outer}>
-                <div className={pot.knowb}>
+                <div className={pot.knowb} style={{ transform: 'rotate(' + a + 'deg)', transition: 'transform 1s' }}>
                     <div className={pot.arrow} style={{ transform: 'rotate(' + a + 'deg)', transition: 'transform 1s' }}>
                         <div className={pot.leftarrow} ></div>
                     </div>
