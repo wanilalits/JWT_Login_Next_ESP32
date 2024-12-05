@@ -5,7 +5,7 @@ import _profile from './_profile.module.css'
 import { useRouter } from 'next/navigation';
 import Pot from "../Components/Pot/Pot";
 import Thermometer from "../Components/Thermometer";
-import Compass from "../Components/SwitchControl/Compass/Compass.js";
+import Compass from "../Components/Compass/Compass.js";
 import Colourpicker from "../Components/ColourPicker/Colourpicker";
 import SwitchControl from "../Components/SwitchControl/SwitchControl";
 import  ButtonControl  from "../Components/ButtonControl/ButtonControl";

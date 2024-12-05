@@ -5,7 +5,6 @@
   height: 15px;
   background-color: rgb(231, 227, 202);
   border-radius:5px ;
-  
   }
   
   .b322{
@@ -18,6 +17,7 @@
   transform: translate(-50% , 0% );
   border-radius:5px ;
   }
+
   .b323{
     position: absolute;
     display:  inline-block;
@@ -28,6 +28,7 @@
   transform: translate(-100% , 0% );
   border-radius:5px ;
   }
+
   .b324{
     position: absolute;
     display:  inline-block;
@@ -39,6 +40,7 @@
   transform: translate(-50% , 0% );
   border-radius:5px ;
   }
+
   .b325{
     position: absolute;
     display:  inline-block;
@@ -50,6 +52,7 @@
   transform: translate(-0% , -50% );
   border-radius:5px ;
   }
+
   .b326{
     position: absolute;
     display:  inline-block;
@@ -61,6 +64,7 @@
   transform: translate(-50% , -50% );
   border-radius:5px ;
   }
+
   .b327{
     position: absolute;
     display:  inline-block;
@@ -85,3 +89,17 @@
   border-radius:5px ;
   }
   
+
+  .b328, .b327 ,.b321 ,.b322, .b323, .b324 ,.b325, .b326{
+ 
+   
+ border: 2px solid rgba(41, 30, 196, 0.4);
+    box-shadow: 
+    inset 0px 0px 10px rgba(41, 30, 196, 0.4),
+    inset -0px -0px 10px rgba(41, 30, 196, 0.4);
+    
+  }
+  
+ 
+  
+
