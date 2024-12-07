@@ -1,8 +1,22 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import _colourPicker from './_colourPicker.module.css'
 import { SketchPicker,ChromePicker } from 'react-color';
+import {useScrollBlock} from '../CustomRef/CustomRef'
  const Colourpicker = (props) => {
-    const [color, setColor] = useState("#FF0000");
+    
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [blockScroll, allowScroll] = useScrollBlock();
+
+	useEffect(() => {
+		if (isModalOpen) {
+			blockScroll();
+		} else {
+			allowScroll();
+		}
+	}, [isModalOpen, blockScroll, allowScroll]);
+  
+  const [color, setColor] = useState("#FF0000");
     const [hidden, setHidden] = useState(false);
     const pickerStyle = {
       default: {
@@ -21,7 +35,7 @@ const RGBvalue=(rgb)=>{
 var r=rgb.r
 var g=rgb.g
 var b=rgb.b
-  //a= a.slice(1, -3)
+
 
   
 
@@ -33,9 +47,12 @@ var b=rgb.b
     
    
    <div>
-      <ChromePicker  styles={pickerStyle}
+   <div onTouchStart={()=>setIsModalOpen(true)} onTouchEnd={()=>setIsModalOpen(false)} >
+      <ChromePicker 
+       styles={pickerStyle}  className={_colourPicker.sub}
             color={color}  onChange={(updatedColor) => {RGBvalue(updatedColor.rgb) ,  props.action(color) } } />
-     
+     </div>
+
     </div>
   
   )
@@ -43,3 +60,5 @@ var b=rgb.b
 export default Colourpicker;
 
 //  onChange={(updatedColor) => {RGBvalue(updatedColor.rgb) ,  props.action(color)} }  />
+
+//pointer-events: none;

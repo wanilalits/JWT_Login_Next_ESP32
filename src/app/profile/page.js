@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import _profile from './_profile.module.css'
 import { useRouter } from 'next/navigation';
@@ -10,10 +10,11 @@ import Colourpicker from "../Components/ColourPicker/Colourpicker";
 import SwitchControl from "../Components/SwitchControl/SwitchControl";
 import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
 import Control  from "../Components/Control/Control";
-
+import {useScrollBlock} from '../Components/CustomRef/CustomRef'
 
 function page(props) {
-  
+  const [blockScroll, allowScroll] = useScrollBlock();
+  const scroll = useRef(false);
   const router = useRouter();
  
   const [ws, setWs] = useState(null);
@@ -89,12 +90,21 @@ function page(props) {
     hei = data
   };
 
+
+
+  
+
+ 
+
+
+
+
   return (
-    <div>
+    <div  >
 
 
 
-<div className={_profile.main}>
+<div className={_profile.main}  onTouchStart={allowScroll()}  >
      <div className={_profile.box1}>  <Thermometer wsdata={wbmessage.t}></Thermometer> </div>
    
      <div className={_profile.box2}>  
@@ -123,7 +133,7 @@ function page(props) {
     
      <div className={_profile.box4}>
 
-     <div className={_profile.box41}><Colourpicker action={yourFunction}></Colourpicker> </div>
+     <div className={_profile.box41} ><Colourpicker  action={yourFunction}></Colourpicker> </div>
     
      <div className={_profile.box42}> <Control></Control></div>
  </div>
