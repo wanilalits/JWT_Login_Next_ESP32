@@ -1,14 +1,8 @@
 
 import React, { useRef } from 'react'
-//import _buttonControl from './_buttonControl.module.css'
-import buttonControl  from './buttonControl.module.css'
-
-
-let data;
+import buttonControl from './buttonControl.module.css'
 
 const ButtonControl = (props) => {
-
-
     const inputRef1 = useRef(null);
     const inputRef2 = useRef(null);
     const inputRef3 = useRef(null);
@@ -17,9 +11,7 @@ const ButtonControl = (props) => {
     const inputRef6 = useRef(null);
     const inputRef7 = useRef(null);
     const inputRef8 = useRef(null);
-
-
-
+   
     let c1 = 'rgb(231, 227, 202)', c2 = "rgb(168, 19, 91)"
     let bf, bl
 
@@ -27,7 +19,7 @@ const ButtonControl = (props) => {
     if (props.wsdata != undefined) {
         bf = props.wsdata.charAt(0)
         bl = props.wsdata.charAt(1)
-        console.log(bf)
+        
         if (bf == 1) {
             if (bl == 1) {
                 inputRef1.current.style.backgroundColor = c2;
@@ -92,7 +84,7 @@ const ButtonControl = (props) => {
         }
 
 
-        
+
         if (bf == 8) {
             if (bl == 1) {
                 inputRef8.current.style.backgroundColor = c2;
@@ -103,8 +95,21 @@ const ButtonControl = (props) => {
         }
 
 
-      if (bf == 0) {
+        if (bf == 0) {
             if (bl == 1) {
+               
+
+                inputRef1.current.style.backgroundColor = c1;
+                inputRef2.current.style.backgroundColor = c1;
+                inputRef3.current.style.backgroundColor = c1;
+                inputRef4.current.style.backgroundColor = c1;
+                inputRef5.current.style.backgroundColor = c1;
+                inputRef6.current.style.backgroundColor = c1;
+                inputRef7.current.style.backgroundColor = c1;
+                inputRef8.current.style.backgroundColor = c1;
+
+            }
+            else {
                 inputRef1.current.style.backgroundColor = c2;
                 inputRef2.current.style.backgroundColor = c2;
                 inputRef3.current.style.backgroundColor = c2;
@@ -114,19 +119,8 @@ const ButtonControl = (props) => {
                 inputRef7.current.style.backgroundColor = c2;
                 inputRef8.current.style.backgroundColor = c2;
             }
-            else {
-                inputRef1.current.style.backgroundColor = c1;
-                inputRef2.current.style.backgroundColor = c1;
-                inputRef3.current.style.backgroundColor = c1;
-                inputRef4.current.style.backgroundColor = c1;
-                inputRef5.current.style.backgroundColor = c1;
-
-                inputRef6.current.style.backgroundColor = c1;
-                inputRef7.current.style.backgroundColor = c1;
-                inputRef8.current.style.backgroundColor = c1;
-            }
         }
-       
+
 
     }
 
