@@ -12,8 +12,8 @@ import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
 import Control  from "../Components/Control/Control";
 import {useScrollBlock} from '../Components/CustomRef/CustomRef'
 
- var humidity = ''
-var altitude = ''
+ var humidity = 'updating'
+var altitude = 'updating'
 function page(props) {
   const [blockScroll, allowScroll] = useScrollBlock();
   const scroll = useRef(false);
@@ -106,8 +106,8 @@ humidity=wbmessage.h
      <div className={_profile.box1}>  <Thermometer wsdata={wbmessage.t}></Thermometer> </div>
    
      <div className={_profile.box2}>  
-     <div className={_profile.box21}>Humidity <br></br>{humidity} </div>
-     <div className={_profile.box22}>Altitude<br></br>{altitude} </div>
+     <div className={_profile.box21}>Humidity <br></br>{humidity}<span></span>&nbsp;% </div>
+     <div className={_profile.box22}>Altitude<br></br>{altitude} <br></br>meter </div>
      <div className={_profile.box23}>
 
      <div className={_profile.box231}><SwitchControl  wsdata={wbmessage.s1} ></SwitchControl> </div>
