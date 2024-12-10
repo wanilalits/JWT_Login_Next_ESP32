@@ -107,7 +107,7 @@ humidity=wbmessage.h
    
      <div className={_profile.box2}>  
      <div className={_profile.box21}>Humidity <br></br>{humidity}<span></span>&nbsp;% </div>
-     <div className={_profile.box22}>Altitude<br></br>{altitude} <br></br>meter </div>
+     <div className={_profile.box22}>Air Pressure<br></br>{altitude} <br></br>meter </div>
      <div className={_profile.box23}>
 
      <div className={_profile.box231}><SwitchControl  wsdata={wbmessage.s1} ></SwitchControl> </div>
