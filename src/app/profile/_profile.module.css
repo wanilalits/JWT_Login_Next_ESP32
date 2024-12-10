@@ -46,6 +46,9 @@ margin-top: 5px;
 
 margin-left: 5px;
 margin-bottom: 5px;
+text-align: center;
+padding-top: 10px;
+line-height: 1.7;
 }
 
 .box22 {
@@ -56,6 +59,9 @@ margin-bottom: 5px;
     box-sizing: border-box;
     margin:5px;
     margin-bottom: 5px;
+    text-align: center;
+padding-top: 10px;
+line-height: 1.7;
 }
 
 

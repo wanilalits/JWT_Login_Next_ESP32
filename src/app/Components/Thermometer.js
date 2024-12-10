@@ -1,9 +1,11 @@
 import React from 'react'
-import thermometer from '../Components/thermometer.module.css'
-
+import thermometer from './thermometer.module.css'
+let data 
  const Thermometer = (props) => {
-var data =props.wsdata
-   
+if (props.wsdata)
+
+{  data =props.wsdata}
+
    return (
 <div className={thermometer.ThermameterOBody}>
 <div className={thermometer.ThermameterTube}> 

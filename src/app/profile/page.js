@@ -12,6 +12,8 @@ import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
 import Control  from "../Components/Control/Control";
 import {useScrollBlock} from '../Components/CustomRef/CustomRef'
 
+ var humidity = ''
+var altitude = ''
 function page(props) {
   const [blockScroll, allowScroll] = useScrollBlock();
   const scroll = useRef(false);
@@ -21,7 +23,8 @@ function page(props) {
   const [wbmessage, setWbessage] = useState('');
   const [clientId, setClientId] = useState('');
   const [data, setData] = useState(30);
-  var hei = 30
+ 
+
   
   useEffect(() => {
     //Implementing the setInterval method..
@@ -42,11 +45,14 @@ function page(props) {
 
   const  yourFunction=(data)=> {
     console.log(data)
-    if (ws) {
+    if (ws.readyState!=1) {
+      console.log(ws.readyState)
+      websocketEvents()
+    }
       ws.send(JSON.stringify({
           led: data,
       }));
-  }
+  
 
   };
 
@@ -54,28 +60,18 @@ function page(props) {
   const websocketEvents = () => {
 
     const websocket = new WebSocket('wss://nodejswebsocket.onrender.com/');
-
-    websocket.onopen = () => {
-      console.log('WebSocket is connected');
-      // Generate a unique client ID
-      const id = Math.floor(Math.random() * 1000);
-      setClientId(id);
-    };
-
-    websocket.onmessage = (evt) => {
-     // console.log (evt.data)
-     //console.log (JSON.parse(evt.data.slice(8)))
-    setWbessage(JSON.parse(evt.data.slice(8)))
-
-
-};
-
-    websocket.onclose = () => {
-    };
-
+    websocket.onopen = () => {console.log('WebSocket is connected'); };
+    websocket.onmessage = (evt) => {setWbessage(JSON.parse(evt.data.slice(8)));};
+    websocket.onclose = () => { console.log('WebSocket is closed');};
+websocket.onerror= () => { console.log('WebSocket is in error');};
+websocket.on
     setWs(websocket);
     return () => { websocket.close(); };
   }
+
+
+
+
 
   const oneLogout = async (e) => {
     let response = await fetch(window.location.origin + '/api/users/profile');
@@ -85,17 +81,19 @@ function page(props) {
     }
   }
 
-  const countClickHandler = () => {
-    setData(Number((Math.random() * (28.00 - 30.00) + 28.00).toFixed(2)));
-    hei = data
-  };
-
-
-
-  
-
  
 
+
+
+
+
+ if(wbmessage.h){
+humidity=wbmessage.h
+ }
+
+ if(wbmessage.a){
+  altitude=wbmessage.a
+   }
 
 
 
@@ -108,8 +106,8 @@ function page(props) {
      <div className={_profile.box1}>  <Thermometer wsdata={wbmessage.t}></Thermometer> </div>
    
      <div className={_profile.box2}>  
-     <div className={_profile.box21}>Humidity </div>
-     <div className={_profile.box22}>Air Pr </div>
+     <div className={_profile.box21}>Humidity <br></br>{humidity} </div>
+     <div className={_profile.box22}>Altitude<br></br>{altitude} </div>
      <div className={_profile.box23}>
 
      <div className={_profile.box231}><SwitchControl  wsdata={wbmessage.s1} ></SwitchControl> </div>
