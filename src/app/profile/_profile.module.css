@@ -47,7 +47,7 @@ margin-top: 5px;
 margin-left: 5px;
 margin-bottom: 5px;
 text-align: center;
-text-size-adjust: auto
+text-size-adjust: auto;
 line-height: 1.7;
 overflow-wrap: break-word;
 }
@@ -61,7 +61,7 @@ overflow-wrap: break-word;
     margin:5px;
     margin-bottom: 5px;
     text-align: center;
-    text-size-adjust: auto
+    text-size-adjust: auto;
 
 overflow-wrap: break-word;
 }
