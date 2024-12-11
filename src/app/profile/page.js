@@ -12,8 +12,8 @@ import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
 import Control  from "../Components/Control/Control";
 import {useScrollBlock} from '../Components/CustomRef/CustomRef'
 
- var humidity = 'updating'
-var altitude = 'updating'
+ var humidity 
+var altitude 
 function page(props) {
   const [blockScroll, allowScroll] = useScrollBlock();
   const scroll = useRef(false);
@@ -89,6 +89,7 @@ websocket.on
 
  if(wbmessage.h){
 humidity=wbmessage.h
+console.log(humidity)
  }
 
  if(wbmessage.a){
