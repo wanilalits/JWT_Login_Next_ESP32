@@ -11,7 +11,7 @@ import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
 import Control  from "../Components/Control/Control";
 import { useCallback } from "react";
 
-import SEO from '../Components/SEO/seo'
+
 
 
 var humidity 
@@ -104,7 +104,7 @@ humidity=wbmessage.h
 
 
   return (
-    < >
+    <div >
 
 
 <div className={_profile.main}   >
@@ -142,7 +142,7 @@ humidity=wbmessage.h
 
    
 
-    </>
+    </div>
   );
 }
 

@@ -12,7 +12,7 @@ const Colourpicker = (props) => {
   
 
   
-console.log ("temp")
+
  
   useEffect(() => {
     if (isModalOpen) {
