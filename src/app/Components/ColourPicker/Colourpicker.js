@@ -41,6 +41,7 @@ const Colourpicker = (props) => {
 
   return (
     <div>
+   
       <div onTouchStart={() => setIsModalOpen(true)} onTouchEnd={() => setIsModalOpen(false)} >
         <ChromePicker
           styles={pickerStyle} className={_colourPicker.sub}
