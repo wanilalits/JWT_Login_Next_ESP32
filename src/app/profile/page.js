@@ -72,6 +72,7 @@ setUpdate (data)
 
   else
   { console.log(ws.readyState)
+   websocket.close()
     websocketEvents()}
 
    
