@@ -34,18 +34,12 @@ export default function RootLayout({ children }) {
  
 <head>
 <title>DashBoard</title>
-<meta name="theme-color" content="#ebeb34" />
-<meta name="description"
-  content="Lalit....
-  provides information about Open Web technologies
-  including HTML, CSS, and APIs for both websites and
-  progressive web apps." />
+<meta name="theme-color" content="#5c0233" />
+
 
 
 
 </head>
- 
-
       <body >
         {children}
       </body>
