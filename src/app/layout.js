@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
 <title>DashBoard</title>
 <meta name="theme-color" content="#540642" />
 <meta name="description"
-  content="Lalit Iots
+  content="Lalit....
   provides information about Open Web technologies
   including HTML, CSS, and APIs for both websites and
   progressive web apps." />
