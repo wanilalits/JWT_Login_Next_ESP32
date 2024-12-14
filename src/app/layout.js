@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
  
 <head>
 <title>DashBoard</title>
-<meta name="theme-color" content="##428af5" />
+<meta name="theme-color" content="#428af5" />
 </head>
  
 
