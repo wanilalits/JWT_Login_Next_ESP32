@@ -2,12 +2,12 @@
 import React from 'react';
 import { useState } from 'react';
 import login from '@/app/login/login.module.css'
- import Link from 'next/link';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 
 
-function Login (props) {
+function Login () {
     const [data, setData] = useState({  username: '', password: '' })
 
     const [displaymessage, setDisplaymssage] = useState("")
@@ -36,26 +36,19 @@ function Login (props) {
                 response = await response.json()
               localStorage.setItem("value", JSON.stringify(response))
               return  router.push('./profile')
-             
             }
             
             setDisplaymssage('Please check user ID and password')
-           
-       
         }
         catch(error)
         {
-        
         }
-      
-        
-      
-    
- 
     } 
 
     return (
-        <>
+        <div>
+
+
             <div className={login.box}>
                 
                 <label className={login.title}>Login</label>
@@ -80,7 +73,7 @@ function Login (props) {
             <br></br>
 
             </div>
-        </>
+        </div>
     );
 }
 

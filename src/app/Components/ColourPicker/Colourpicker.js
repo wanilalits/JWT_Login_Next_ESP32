@@ -1,22 +1,34 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,memo} from 'react'
 import _colourPicker from './_colourPicker.module.css'
-import { SketchPicker, ChromePicker } from 'react-color';
+import {  ChromePicker } from 'react-color';
 import { useScrollBlock } from '../CustomRef/CustomRef'
-const Colourpicker = (props) => {
 
+const Colourpicker = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [blockScroll, allowScroll] = useScrollBlock();
+  const [color, setColor] = useState("#FF0000");
+ 
+  
 
+  
+console.log ("temp")
+ 
   useEffect(() => {
     if (isModalOpen) {
       blockScroll();
     } else {
       allowScroll();
     }
-  }, [isModalOpen, blockScroll, allowScroll]);
+  }, [isModalOpen]);
+ 
 
-  const [color, setColor] = useState("#FF0000");
+
+
+
+
+
+
 
   const pickerStyle = {
     default: {
@@ -32,10 +44,10 @@ const Colourpicker = (props) => {
       <div onTouchStart={() => setIsModalOpen(true)} onTouchEnd={() => setIsModalOpen(false)} >
         <ChromePicker
           styles={pickerStyle} className={_colourPicker.sub}
-          color={color} onChange={(updatedColor) => { setColor(updatedColor.rgb), props.action(updatedColor.rgb) }} />
+          color={color} onChange={(updatedColor) => { setColor(updatedColor.rgb), props.action(updatedColor.rgb)  }} />
       </div>
     </div>
   )
 }
-export default Colourpicker;
+export default memo(Colourpicker);
 

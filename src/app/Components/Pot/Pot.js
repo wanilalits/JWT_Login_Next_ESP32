@@ -1,8 +1,9 @@
-import React from 'react';
+
+import React,{memo} from 'react';
 import pot from './pot.module.css';
 function Pot(props) {
     var a = props.wsdata
-
+console.log('pot called')
 
     return (
         <div className={pot.background}>
@@ -20,5 +21,5 @@ function Pot(props) {
     );
 }
 
-export default Pot;
+export default memo(Pot);
 //style={{transform: 'rotate('+(data-28)*180+'deg)', transition: 'transform 1s' } }

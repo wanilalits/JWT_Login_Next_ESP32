@@ -1,10 +1,16 @@
 'use client'
 import Link from "next/link";
 
-import Pot from './Components/Pot/Pot'
+
+
+
+
+
 export default function Home() {
 const url='https://lsw-kappa.vercel.app/'
   return (
+
+    <>      
     <div>
     <h2>V1.0</h2>
 <br></br>
@@ -25,5 +31,6 @@ const url='https://lsw-kappa.vercel.app/'
   
 </div>
     </div>
+    </>
   );
 }

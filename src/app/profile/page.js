@@ -1,29 +1,31 @@
 "use client"
-import { useState, useEffect, useRef } from "react";
-
+import { useState, useEffect, useRef, useMemo } from "react";
 import _profile from './_profile.module.css'
 import { useRouter } from 'next/navigation';
 import Pot from "../Components/Pot/Pot";
-import Thermometer from "../Components/Thermometer";
+import Thermometer from "../Components/Thermomete/Thermometer";
 import Compass from "../Components/Compass/Compass.js";
 import Colourpicker from "../Components/ColourPicker/Colourpicker";
 import SwitchControl from "../Components/SwitchControl/SwitchControl";
 import  ButtonControl  from "../Components/ButtonControl/ButtonControl";
 import Control  from "../Components/Control/Control";
-import {useScrollBlock} from '../Components/CustomRef/CustomRef'
+import { useCallback } from "react";
 
- var humidity 
+import SEO from '../Components/SEO/seo'
+
+
+var humidity 
 var altitude 
-function page(props) {
-  const [blockScroll, allowScroll] = useScrollBlock();
+function page() {
+
   const scroll = useRef(false);
   const router = useRouter();
  
-  const [ws, setWs] = useState(null);
+  const [ws, setWs] = useState('');
   const [wbmessage, setWbessage] = useState('');
-  const [clientId, setClientId] = useState('');
+  const [update, setUpdate] = useState('');
   const [data, setData] = useState(30);
- 
+
 
   
   useEffect(() => {
@@ -38,23 +40,9 @@ function page(props) {
 
   useEffect(() => {
     websocketEvents()
-
   }, []
   )
 
-
-  const  yourFunction=(data)=> {
-    console.log(data)
-    if (ws.readyState!=1) {
-      console.log(ws.readyState)
-      websocketEvents()
-    }
-      ws.send(JSON.stringify({
-          led: data,
-      }));
-  
-
-  };
 
 
   const websocketEvents = () => {
@@ -64,14 +52,34 @@ function page(props) {
     websocket.onmessage = (evt) => {setWbessage(JSON.parse(evt.data.slice(8)));};
     websocket.onclose = () => { console.log('WebSocket is closed');};
 websocket.onerror= () => { console.log('WebSocket is in error');};
-websocket.on
+
     setWs(websocket);
     return () => { websocket.close(); };
   }
 
 
 
+ 
+ const yourFunction = useCallback((data)=>{
+setUpdate (data)
+ 
+  if (ws.readyState==1) {
+               
+    ws.send(JSON.stringify({
+      led: data
+  }));
+  }
 
+  else
+  { console.log(ws.readyState)
+    websocketEvents()}
+
+   
+      }
+        ,[update]
+ )
+ 
+   
 
   const oneLogout = async (e) => {
     let response = await fetch(window.location.origin + '/api/users/profile');
@@ -82,14 +90,11 @@ websocket.on
   }
 
  
-
-
-
+ 
 
 
  if(wbmessage.h){
 humidity=wbmessage.h
-console.log(humidity)
  }
 
  if(wbmessage.a){
@@ -99,11 +104,10 @@ console.log(humidity)
 
 
   return (
-    <div  >
+    < >
 
 
-
-<div className={_profile.main}  onTouchStart={allowScroll()}  >
+<div className={_profile.main}   >
      <div className={_profile.box1}>  <Thermometer wsdata={wbmessage.t}></Thermometer> </div>
    
      <div className={_profile.box2}>  
@@ -125,46 +129,25 @@ console.log(humidity)
      
      <div className={_profile.box32}>
       <ButtonControl wsdata={wbmessage.b}></ButtonControl>
-
      </div>
      </div>
-    
-    
      <div className={_profile.box4}>
-
-     <div className={_profile.box41} ><Colourpicker  action={yourFunction}></Colourpicker> </div>
-    
+     <div className={_profile.box41} >   <><Colourpicker  action={yourFunction}></Colourpicker> </> </div>
      <div className={_profile.box42}> <Control></Control></div>
  </div>
-      
       </div>
-
-
-
-   
-
-    
         <div onClick={(e) => (oneLogout(e))}  >  </div>
-    
-
       <button onClick={(e) => (oneLogout(e))}>&nbsp; LogOut &nbsp;</button>  &nbsp;
       <br></br> <br></br>
 
+   
 
-
-    </div>
+    </>
   );
 }
 
 export default page;
 
-/*
-
-
-  <globelInfo.Provider value={{yourFunction :yourFunction}}>
-     <div className={_profile.box41}><Colourpicker action={'yourFunction'}></Colourpicker> </div>
-     </globelInfo.Provider>
 
 
 
-*/
